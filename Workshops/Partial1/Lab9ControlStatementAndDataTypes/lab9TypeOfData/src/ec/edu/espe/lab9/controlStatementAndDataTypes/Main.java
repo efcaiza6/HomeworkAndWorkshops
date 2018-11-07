@@ -40,6 +40,28 @@ public class Main {
         }
         System.out.println("La division es: "+ cont);
         
+        int day;
+        int month;
+        int year;
+        int actuala=2018;
+        int actualm=11;
+        int actuald=6;
+        System.out.println("Ingrese el dia de su nacimiento: ");
+        day = input.nextInt();
+        System.out.println("Ingrese el mes de su nacimiento: ");
+        month =  input.nextInt();
+        System.out.println("Ingrese el anio de su nacimiento: ");
+        year = input.nextInt();
+        
+        operation.add(actuala,-year);
+        System.out.println("Los anios que tiene es: " +operation.getResult());
+        operation.add(actualm, -month);
+        System.out.println("Los meses que tiene son: " +operation.getResult());
+        operation.add(actuald, day);
+        System.out.println("Los dias que tiene son: "+operation.getResult());
+        System.out.println("Usted tiene ");
+        
+        
     }
     
 }
