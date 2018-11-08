@@ -18,48 +18,27 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int operand1 = 20;
         int operand2 = 6;
-        int cont=0;
         /*operand1 = input.nextInt();
         opernad2 = input.nextInt();*/
         Operation operation = new Operation();
-        operation.add(operand1, operand2);
-        System.out.println("The sum is:"+operation.getResult());
-        operation.add(operand1, -operand2);
-        System.out.println("The subtraction is: "+operation.getResult());
-        operation.setResult(0);
-        while(cont < operand2){
-            operation.add(operand1, operation.getResult());
-            cont++;
-        }
-        cont=0;
-        System.out.println("The multiplication is: "+operation.getResult());
-        operation.setResult(operand1);
-        while((operation.getResult()> 0) && (operation.getResult()> operand2) ){
-            operation.add(operation.getResult(), -operand2);
-            cont++;
-        }
-        System.out.println("La division es: "+ cont);
+        System.out.println("The sum is:"+operation.add(operand1, operand2));
+        System.out.println("The subtraction is: "+operation.substract(operand1, operand2));
+        System.out.println("The multiplication is: "+operation.mult(operand1, operand2));
+        System.out.println("La division es: "+operation.div(operand1, operand2));
         
-        int day;
-        int month;
-        int year;
-        int actuala=2018;
-        int actualm=11;
-        int actuald=6;
+        Person person;
+        person = new Person (0,0,0,0,0,0);
+        
         System.out.println("Ingrese el dia de su nacimiento: ");
-        day = input.nextInt();
+        Scanner d = new Scanner(System.in);
+        person.setBirthDay(d.nextInt());
         System.out.println("Ingrese el mes de su nacimiento: ");
-        month =  input.nextInt();
+        Scanner m = new Scanner(System.in);
+        person.setBirthMonth(m.nextInt());
+        Scanner a = new Scanner(System.in);
         System.out.println("Ingrese el anio de su nacimiento: ");
-        year = input.nextInt();
-        
-        operation.add(actuala,-year);
-        System.out.println("Los anios que tiene es: " +operation.getResult());
-        operation.add(actualm, -month);
-        System.out.println("Los meses que tiene son: " +operation.getResult());
-        operation.add(actuald, day);
-        System.out.println("Los dias que tiene son: "+operation.getResult());
-        System.out.println("Usted tiene ");
+        person.setBirthYear(a.nextInt());
+        person.calculateAge(person.getBirthDay(), person.getBirthMonth(), person.getBirthYear(), 0,0,0);
         
         
     }
