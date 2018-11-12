@@ -22,10 +22,13 @@ public class Main {
         Scanner in = new Scanner(System.in);
         Calendar cal = new GregorianCalendar();
         Lab10 fileMan=new Lab10();
-        File file = new File("Register_Age.txt");
+        File file = new File("Register_Age.csv");
         int operand1 = 20;
         int operand2 = 6;
         String name, inString;
+        int birthDay=0;
+        int birthMonth=0;
+        int birthYear=0;
         /*operand1 = input.nextInt();
         opernad2 = input.nextInt();*/
         Operation operation = new Operation();
@@ -38,20 +41,39 @@ public class Main {
         int cont=0;
         System.out.println("Ingrese el nombre");
         name=in.nextLine();
-        System.out.println("Ingrese el dia de su nacimiento: ");
-        int birthDay=in.nextInt();
-        if(birthDay<=0 || birthDay>31){
-            System.out.println("Dia ingresado Incorrecto");
-            cont=0;
-        }else {
+        while(cont==0){
+            System.out.println("Ingrese el dia de su nacimiento: ");
+            birthDay=in.nextInt();
+            if(birthDay<=0 || birthDay>31){
+                System.out.println("Dia Ingresado Incorrecto");
+                cont=0;
+            }else {
             cont=1;
+                }
+        }
+        cont=0;
+        while(cont==0){
+            System.out.println("Ingrese el mes de su nacimiento: ");
+            birthMonth=in.nextInt();
+            if(birthMonth<=0 || birthMonth>12){
+                System.out.println("Mes Ingresado Incorrecto");
+                cont=0;
+            }else{
+                cont=1;
+            }
+        }
+        cont=0;
+        while(cont==0){
+            System.out.println("Ingrese el anio de su nacimiento: ");
+            birthYear=in.nextInt();
+            if(birthYear<=1900 || birthYear>cal.get(Calendar.YEAR)){
+                System.out.println("Año Ingresado Incorrecto");
+                cont=0;
+            }else{
+                cont=1;
+            }
         }
         
-
-        System.out.println("Ingrese el mes de su nacimiento: ");
-        int birthMonth=in.nextInt();
-        System.out.println("Ingrese el anio de su nacimiento: ");
-        int birthYear=in.nextInt();
         person.calculateDay(birthDay, birthMonth, birthYear);
         person.calculateMonth(birthDay, birthMonth, birthYear);
         person.calculateAge(birthDay,birthMonth,birthYear);
@@ -59,8 +81,8 @@ public class Main {
         System.out.println("usted tiene "+person.getYear()+" años "
         +person.getMonth()+" meses y "+person.getDay()+" dias");
         
-        inString = "("+ name + ") " + person.getYear() + ", " 
-                + person.getMonth() + ", " + person.getDay();
+        inString = "" + name + ";" + person.getYear() + ";" 
+        + person.getMonth() + ";" + person.getDay();
 
         fileMan.WriterFile(file, inString);
         fileMan.ReaderFile(file);
