@@ -1,0 +1,11 @@
+
+El mamifero Monkey con Id 202 es de tipo Land 
+tiene 2 tetillas, 4 patas y su estancia en el zoo es 21 años.
+El Reptil Crocodile con Id 956 pone 5 huevos y su estancia en el zoo es 16 años.
+El mamifero Elephant con Id 666 es de tipo Land 
+tiene 2 tetillas, 4 patas y su estancia en el zoo es 19 años.
+El Reptil Iguana con Id 196 pone 7 huevos y su estancia en el zoo es 16 años.
+El mamifero Bat con Id 199 es de tipo Flying 
+tiene 2 tetillas, 2 patas y su estancia en el zoo es 18 años.
+El mamifero Dolphin con Id 11 es de tipo water 
+tiene 1 tetillas, 0 patas y su estancia en el zoo es 8 años.
