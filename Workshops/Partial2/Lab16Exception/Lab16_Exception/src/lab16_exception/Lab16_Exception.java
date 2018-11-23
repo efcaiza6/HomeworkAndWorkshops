@@ -7,6 +7,7 @@ package lab16_exception;
 
 import ec.edu.espe.Operation.Operation;
 import ec.edu.espe.model.animal.Animal;
+import java.io.IOException;
 
 /**
  *
@@ -39,8 +40,43 @@ public class Lab16_Exception {
         
         
         Animal animal = new Animal();
-        animal=null;
-        System.out.println("eyes "+animal.eyes);
+        //animal=null;
+        //animal= new Animal();
+        /*if (animal != null) {
+            System.out.println("The animal exist");
+        }else{
+            System.out.println("The animal not exist");
+        }*/
+        try {
+            System.out.println("The files run");
+            System.out.println("eyes "+animal.eyes);
+            System.out.println("The program is style running");
+            
+        } catch (NullPointerException ex) {
+            System.out.println("An error occured "+ex);
+            System.out.println("The exception running "+ex.getMessage());
+            if (ex.toString().equals("java.lang.NullPointerException")) {
+                System.out.println("No hay animales creados");
+            }
+            System.out.println("stack "+ex.getStackTrace());
+            ex.printStackTrace();
+            
+            //Animal animal=new Animal();
+            if (animal.eyes != null) {
+                System.out.println("Animal "+animal.eyes);
+            }else{
+                animal.eyes="brown";
+                System.out.println("Los ojos son de color "+animal.eyes);
+            }
+        }
+        //finally{
+          //  System.out.println("after the exception");
+        //}
+        System.out.println("The is the Barn Number "+animal.getBarnNumber());
+        Animal animal2=new Animal();
+        System.out.println("The is the Barn Number "+animal2.getBarnNumber());
+        animal2.assignBarnNumber(18);
+        System.out.println("The is the Barn Number "+animal2.getBarnNumber());
         
     }
     
